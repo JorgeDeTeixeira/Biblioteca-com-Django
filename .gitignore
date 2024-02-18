@@ -1,0 +1,49 @@
+# Arquivos temporários
+*.pyc
+*~
+
+# Diretório de ambiente virtual
+.venv/
+
+# Arquivos de log
+*.log
+
+# Arquivos de backup
+*.bak
+
+# Arquivos de configuração específicos do ambiente
+.env
+
+# Banco de dados SQLite
+db.sqlite3
+
+# Arquivos estáticos coletados
+staticfiles/
+
+# Diretório de mídia
+media/
+
+# Arquivos de configuração local (por exemplo, settings.py local)
+local_settings.py
+
+# Arquivos de cache
+__pycache__/
+
+# Diretório de migrações
+*/migrations/
+
+# Arquivo de inicialização do banco de dados
+db.sqlite3
+
+# Arquivos de cache do editor
+.idea/
+
+# Arquivos de configuração do VS Code
+.vscode/
+
+# Arquivos de configuração do PyCharm
+.idea/
+
+# Outros arquivos gerados
+*.swp
+.DS_Store
