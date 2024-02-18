@@ -1,11 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Oi</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Página Inicial
+{% endblock page_title %}
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #cce5ff; /* Azul claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    padding: 40px; /* aumentando o espaçamento interno */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    text-align: center;
+    padding: 20px 0;
+    color: #333;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-content {
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+
+<div class="container">
+    <header class="header">
+      <h1 style="font-size: 32px;">Bem-vindo à Livraria!</h1>
+      <p style="font-size: 18px;">Encontre os melhores livros aqui.</p>
+    </header>
+  
+    <div class="main-content">
+      <a href="#" class="btn">Listar Livros / Catalogar</a>
+    </div>
+  </div>
+{% endblock content %}
