@@ -55,6 +55,22 @@
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
+
+    a.cancel, a.back {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #6c757d;
+        padding: 10px 30px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-left: 10px;
+        transition: background-color 0.3s;
+    }
+
+    a.cancel:hover, a.back:hover {
+        background-color: #5a6268;
+    }
 </style>
 
 
@@ -70,6 +86,12 @@
     
     {{ form.as_p }}
 
-    <input type="submit" value="Cadastrar">
+    
+    {% if book.pk %}
+    <input type="submit" value="Salvar">
+    {% else %}
+        <input type="submit" value="Cadastrar">
+    {% endif %}
+    <a href="{% url 'get_books' %}" class="back">Voltar</a>
 </form>
 {% endblock content %}

@@ -8,4 +8,5 @@ urlpatterns = [
     path("cadastrar", BookCreateView.as_view(), name="post_book"),
     path("update/<int:pk>", BookUpdateView.as_view(), name="put_book"),
     path("delete/<int:pk>", BookDeleteView.as_view(), name="delete_book"),
+    path("read/<int:pk>", BookReadView.as_view(), name="read_book"),
 ]

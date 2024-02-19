@@ -39,4 +39,9 @@ class Book(models.Model):
     class Meta:
         verbose_name = "Livro"
         verbose_name_plural = "Livros"
-        ordering = ["id"]
+        ordering = ["read"]
+
+    def book_read(self):
+        if self.read == False:
+            self.read = True
+            self.save()
