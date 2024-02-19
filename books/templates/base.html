@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            Livravia - {% block page_title %}{% endblock page_title %}
-        </title>
-    </head>
-    <body>
-        <main>{% block content %} {% endblock content %}</main>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Livravia - {% block page_title %}{% endblock page_title %}
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #007bff; /* Azul vibrante */
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999; /* Para garantir que a navbar fique acima do conteúdo */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+        }
+
+        main {
+            margin-top: 50px; /* Garantindo que o conteúdo não seja sobreposto pela navbar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home_page' %}">Página Inicial</a>
+        <a href="{% url 'get_books' %}">Adicionar Livro</a>
+    </nav>
+    <main>{% block content %} {% endblock content %}</main>
+</body>
 </html>
