@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from books.models import Book
@@ -23,4 +23,9 @@ class BookCreateView(CreateView):
 class BookUpdateView(UpdateView):
     model = Book
     form_class = BookForm
+    success_url = reverse_lazy("get_books")
+
+
+class BookDeleteView(DeleteView):
+    model = Book
     success_url = reverse_lazy("get_books")

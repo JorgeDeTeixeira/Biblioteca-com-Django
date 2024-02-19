@@ -100,8 +100,8 @@
             <td>{% if book.read %}Lido{% else %}Não Lido{% endif %}</td>
             <td>
                 <a href="#" class="actions lido" >Lido</a>
-                <a href="{% url 'put_books' pk=book.pk %}" class="actions editar">Editar</a>
-                <a href="#" class="actions deletar">Deletar</a>
+                <a href="{% url 'put_book' pk=book.pk %}" class="actions editar">Editar</a>
+                <a href="{% url 'delete_book' pk=book.pk %}" class="actions deletar">Deletar</a>
             </td>
         </tr>
         {% endfor %}

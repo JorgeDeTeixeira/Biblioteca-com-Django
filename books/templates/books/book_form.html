@@ -57,7 +57,13 @@
     }
 </style>
 
-<h1>Cadastrar Livro</h1>
+
+{% if book.pk %}
+<h1>Atualizar livro</h1>
+{% else %}
+<h1>Cadastrar livro</h1>
+{% endif %}
+    
 
 <form method="POST">
     {% csrf_token %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Deletar Livro
+{% endblock page_title %}   
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    p {
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    form {
+        display: inline-block;
+    }
+
+    input[type="submit"] {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #c82333;
+    }
+
+    a.cancel {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #6c757d;
+        padding: 10px 30px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-left: 10px;
+        transition: background-color 0.3s;
+    }
+
+    a.cancel:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="container">
+    <h1>Deletar Livro</h1>
+    <p>Tem certeza de que deseja deletar este livro?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Deletar">
+        <a href="{% url 'get_books' %}" class="cancel">Cancelar</a>
+    </form>
+</div>
+{% endblock content %}
