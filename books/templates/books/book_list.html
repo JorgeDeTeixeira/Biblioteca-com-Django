@@ -92,7 +92,7 @@
     <tbody>
         {% for book in book_list %}
         <tr>
-            <td>{{ book.id }}</td>
+            <td>{{ book.pk }}</td>
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
             <td>{{ book.year }}</td>
@@ -100,7 +100,7 @@
             <td>{% if book.read %}Lido{% else %}Não Lido{% endif %}</td>
             <td>
                 <a href="#" class="actions lido" >Lido</a>
-                <a href="#" class="actions editar">Editar</a>
+                <a href="{% url 'put_books' pk=book.pk %}" class="actions editar">Editar</a>
                 <a href="#" class="actions deletar">Deletar</a>
             </td>
         </tr>
