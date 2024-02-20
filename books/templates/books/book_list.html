@@ -95,7 +95,7 @@
             <td>{{ book.pk }}</td>
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
-            <td>{{ book.year }}</td>
+            <td>{{ book.year|default:"Desconhecido" }}</td>
             <td>{{ book.page_numbers|default:"Desconhecido" }}</td>
             <td>{% if book.read %}Lido{% else %}Não Lido{% endif %}</td>
             <td>
